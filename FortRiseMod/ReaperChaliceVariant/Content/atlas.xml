@@ -1,0 +1,4 @@
+<TextureAtlas imagePath="output/atlas/png">
+  <SubTexture name="awards/mostRitualistic" x="0" y="0" width="48" height="14"/>
+  <SubTexture name="variants/reaperChalice" x="48" y="0" width="14" height="14"/>
+</TextureAtlas>

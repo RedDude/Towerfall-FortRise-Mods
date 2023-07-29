@@ -1,0 +1,7 @@
+{
+	"name": "Touch Brambles Variant",
+	"version": "2.0.0",
+	"author": "RedDude",
+	"description": "Variant port from the Switch Version, Fill the chalice to summon the reaper",
+	"dll": "ReaperChaliceVariant.dll"
+}

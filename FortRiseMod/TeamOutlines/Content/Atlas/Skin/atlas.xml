@@ -1,0 +1,11 @@
+<TextureAtlas imagePath="output/atlas/png">
+  <SubTexture name="aimers/red" x="205" y="60" width="30" height="10"/>
+  <SubTexture name="corpses/red/flash" x="0" y="120" width="72" height="20"/>
+  <SubTexture name="corpses/red/normal" x="160" y="102" width="72" height="20"/>
+  <SubTexture name="player/body8" x="0" y="0" width="154" height="60"/>
+  <SubTexture name="player/bow8" x="160" y="60" width="45" height="42"/>
+  <SubTexture name="player/hat/red/normal" x="234" y="0" width="11" height="6"/>
+  <SubTexture name="player/head/Crown8" x="80" y="60" width="80" height="60"/>
+  <SubTexture name="player/head/NoHat8" x="0" y="60" width="80" height="60"/>
+  <SubTexture name="player/head/Normal8" x="154" y="0" width="80" height="60"/>
+</TextureAtlas>

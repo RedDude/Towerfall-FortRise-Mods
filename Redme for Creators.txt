@@ -1,0 +1,224 @@
+While creating a custom archer:
+
+* I do suggest using Visual studio Code to replace all places where the character name is present
+for instance, if you character is named "badAssArcher"
+replace "madeline" to "badAssArcher" (please, mind the the camelCase [it start with a lower capital])
+
+
+* Keep the images at the power of 4,
+
+128x128
+256x256
+512x512
+
+* Leave the smallest transparency space possible. 
+
+Advanced:
+* You can also use an atlas creator, TexturePacker/ Shoebox / Terria's cluttered
+
+- CUSTOM SFX: 
+
+To load custom SFX you need to add the tag
+<CustomSFX></CustomSFX> in the archerData.xml
+
+When you put this tag, it will look for the sounds in the SFX folder using the Folder name as prefix
+ie, if the folder is called "Madeline" it will use "MADELINE" as prefix (yeah all caps) for looking the sounds.
+so the files need to be named "MADELINE_{action}.wav" 
+
+in case you want to use a different prefix, ie the case of "Badeline" alt
+you can use 
+
+<CustomSFX>
+   <Name>BADELINE</Name>
+</CustomSFX> 
+
+so the files need to be named "BADELINE_{action}.wav" 
+
+- You can also put the files of the alt and secret archer in a inner folder inside SFX (which is the case from that files that I send you, Madeline SFX is in the root and Badeline inside a folder named "Alt"). 
+
+<CustomSFX>
+   <Name>Alt/BADELINE</Name>
+</CustomSFX> 
+
+it will look for the "Alt" folder inside SFX and the the files need to be named "BADELINE_{action}.wav"
+(Content\Mod\CustomArchers\Madaline\SFX\Alt\BADELINE_{action}.wav) 
+
+You dont have to set ALL the sounds for the custom. you can put a "Fallback" to use the sounds of another Archer. for instance: let say that you put only "MADALINE_READY_01.wav",  "MADALINE_READY_02.wav" in the SFX folder and wants to use all the other sounds of Purple.
+
+<CustomSFX>
+   <Fallback>PURPLE</Fallback>
+</CustomSFX> 
+
+This tag will do exactly that 
+if you want to use an alternative archer sounds just add a "_ALT" in the end. ie: 
+<Fallback>PURPLE_ALT</Fallback> 
+For the custom Victory song, you have to <CustomSFX></CustomSFX> and have a "{PREFIX}_VICTORY.wav" inside SFX. the value at <VictoryMusic> will be used as a Fallback in case the character doesnt have a custom Victory song
+
+ ie <VictoryMusic>CYAN</VictoryMusic>, will play CYAN song in case the custom archers doesnt have Victory song 
+
+All the available SFX actions:
+
+READY
+DESELECT
+AIM
+AIM_CANCEL
+AIM_DIR
+ARROW_GRAB
+ARROW_RECOVER
+DIE
+DIE_BOMB
+DIE_ENV
+DIE_LASER
+DIE_STOMP
+DUCK
+FIRE_ARROW
+GRAB
+JUMP
+LAND
+NOFIRE
+WALLSLIDE_LOOP
+ARROW_STEAL
+SLEEP_LOOP
+REVIVE
+
+And 
+
+VICTORY
+
+(you don't need to add all those sounds, remeber the <Fallback>) 
+
+READY expect to be Varied, this means, more than one sound ({PREFIX}_READY_01.wav, {PREFIX}_READY_02.wav)
+in that format, _01, _02, _03...
+
+DUCK and REVIVE seems to be able to Varied, but is not required. 
+ie. you can have only one DUCK sound {PREFIX}_DUCK.wav or many ({PREFIX}_DUCK_01.wav, {PREFIX}_DUCK_02.wav)
+
+so you can make something like CYAN 
+
+Mod By RedDude
+RedDude#0933
+
+https://discord.com/channels/248961953656078337/825482637216186421
+
+*Installation Instructions:*
+ - Install FortRise (https://github.com/Terria-K/FortRise)
+- Copy the "ArcherLoader" folder to "Mods" folder the game main folder (aka game Root)
+(you game root is probably:C:\SteamLibrary\steamapps\common\TowerFall\)
+- Download a custom character (for instance, https://discord.com/channels/248961953656078337/1109196498849239082)
+- Then put this (and any other custom archer) into "{Game Main folder}/Content/Mod/CustomArchers" (it will created automatically at the first run, if you don't create it yourself)
+
+*Install complete!*
+
+It should work in *any PC version* (8 players, Steam, Itchi, GoG) of the game
+
+- Aside easily add new archers, you also can: 
+
+* Drop Hat, on Right stick to the Right while Idle (Or L key)
+* Kill yourself, on Right stick to the Left while Aim an arrow (Or K key)
+* Taunn,  Duck and Move the Right Stick down (Or V key) 
+
+This mod support Taunts, you can both use Taunts as a variant or enable it globally in the "Mods menu" inside "ArcherLoader by RedDude"
+
+* How to install a Taunt?
+Just put the Taunts Folders on "Content/Mod/CustomArchers"
+
+* How to create a taunt?
+To create a Taunt to the a base archer, use PinkTaunt as reference. 
+
+To Custom Archer, use Skeleton Archer by @All-Seeing#9253
+https://discord.com/channels/248961953656078337/1110725737461329950/1110739802929766473
+
+For Character creators:
+
+* Quick test teams: Press ' in the keyboard, type 'SetTeam Blue/Red/Neutral'. any invalid value will set for Neutral. 
+* Quick test Hats: Press ' in the keyboard, type 'SetHat {playerIndex}  0/1/2' to change hats. (playerindex starts on 0)
+
+Settings Options:
+* Set 'Quick Start' to On, to quick start a game
+* While 'Quick Start' is true,  Set the archer Index to start the quick Game with that archer (starts on 0 and -1 is not archer)
+
+* Help I got an older archer stuck in main atlas! 
+I can help! They can be extracted pretty easily now. Send me the files and I see what I can do.
+
+--- RECOMMENDATIONS AND TIPS
+
+* Do I need a short portrait for the 8 player version?
+No, the mod will crop the image automatically.
+Still, the support two elements on Archer Data to handle the 8 player version:
+
+*EightPlayersNotJoinedPortraitTopOffset* : add a top offset to crop the portrait to allow you to select the part what you want to see (like CYAN butts) for the Not Joined Portrait
+
+*EightPlayersJoinedPortraitTopOffset*: the same as above but for Joined Portrait
+
+Ie in your *archerData.xml* for your custom:
+`<EightPlayersNotJoinedPortraitTopOffset>10</EightPlayersNotJoinedPortraitTopOffset>
+<EightPlayersJoinedPortraitTopOffset>10</EightPlayersJoinedPortraitTopOffset> `
+
+
+* I do suggest using Visual studio Code to replace all places where the character name is present
+for instance, if you character is named "badAssArcher"
+replace "madeline" to "badAssArcher" (please, mind the the camelCase [it start with a lower capital])
+
+
+* Keep the images at the power of 4,
+64x64
+128x128
+256x256
+512x512
+
+* Leave the smallest transparency space possible.
+
+* HAIR
+
+To add hair to your custom  you need to add the tag
+` <Hair>True</Hair>` and 
+`<HairInfo></HairInfo>` in your custom *archerData.xml*
+
+`<HairInfo>` support the following values (in side of it):
+
+*Color* : The color of the hair. need to be a HEX value and works better with white sprites (the defaults one are, so don't worry) ie `<Color>c33f3f</Color>` (required)
+
+*Links* : how many links the hair have. almost like its lenght. ie `<Links>5</Links>` (required)
+
+*LinksDist* : how far each links the hair are from each othert. ie `<LinksDist>5</LinksDist>` (required)
+
+*X* : the X offset from the head. use this to position the hair in the head horizontally. you can even go nuts and created Scarfs, Capes, Tails and you creativity . Usually 0 is fine. Mind the caps. ie  `<X>0</X>` (required)
+
+*Y* : the Y offset from the head. use this to position the hair in the head vertically. you can even go nuts and created Scarfs, Capes, Tails and you creativity.  Mind the caps. ie  `<Y>2</Y>` (required)
+
+*DuckingOffset* : have as X and Y, but happens when you character is duck . ie  `<DuckingOffset>2</DuckingOffset>` by default is only applys to Y. But you can use
+`<DuckingOffset x="2" y="1"/>` in case you want to change the X. (required)
+
+*Scale* : the scale of the hair . ie  `<Scale>2</Scale>`
+
+*EndColor* : The color from the bottom (last link) of the hair. need to be a HEX value and works better with white sprites (the defaults one are, so don't worry) ie `<EndColor>4cff00</EndColor>`
+
+*HairSprite* : Used to change the hair appearance. Need to be a valid sprite in the custom Atlas. it is recommend to use a white sprite to be able to use together with `<Color>`. or have a sprite with color but use `<Color>ffffff<Color>` last link) of the hair. 
+*HairEndSprite* : Used to change the bottom (last link) of the hair. Need to be a valid sprite in the custom Atlas. it is recommend to use a white sprite to be able to use together with `<Color>`. or have a sprite with color but use `<Color>ffffff<Color>` last link) of the hair. 
+
+*Gradient* : When True, will make a Gradient from the the `<Color>` to `<EndColor>` . so use both elements. ie  `<Gradient>True/False</Gradient>`
+
+*SineValue* :  should work, but it don't.
+
+*VisibleWithHat* When False, the hair will not show while using a Hat. `<VisibleWithHat>True/False</VisibleWithHat>` (dafault: True)
+
+*WithHatOffset* : Same as X and Y, but happens when you character has the Hat on . ie  
+`<WithHatOffsetx="2" y="1"/>` 
+
+A simple hair for sample:
+`    <Hair>True</Hair>
+    <HairInfo>
+      <Links>5</Links>
+      <Scale>2</Scale>
+      <LinksDist>3</LinksDist>
+      <X>0</X>
+      <Y>2</Y>
+      <DuckingOffset>2</DuckingOffset>
+      <Color>c33f3f</Color>
+    </HairInfo>*`
+
+* Can I start without a Hat?
+Use `<StartNoHat>True</StartNoHat>`  *outside* *OUTSIDE* of  `<HairInfo>`
+
+* Can make the Hair behave like White archer? 
+Set `<VisibleWithHat>` to False and set head for the "Hat" head

@@ -1,0 +1,7 @@
+{
+	"name": "Touch Brambles Variant",
+	"version": "2.0.0",
+	"author": "RedDude",
+	"description": "Variant that create Brambles where players Touch",
+	"dll": "TouchBramblesVariant.dll"
+}

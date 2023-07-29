@@ -1,0 +1,7 @@
+{
+	"name": "PassThroughTeam Variant",
+	"version": "1.0.0",
+	"author": "RedDude",
+	"description": "Do not bump into Teammates",
+	"dll": "PassThroughTeamVariant.dll"
+}

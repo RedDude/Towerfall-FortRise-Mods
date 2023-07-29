@@ -1,0 +1,8 @@
+{
+	"name": "VariantsPickup",
+	"version": "1.0.0",
+	"required": "2.2.0",
+	"author": "RedDude",
+	"description": "Make Variants as pickup items",
+	"dll": "VariantsPickup.dll"
+}
