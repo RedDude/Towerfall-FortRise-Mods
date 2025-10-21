@@ -1,0 +1,18 @@
+{
+	"displayName": "Speedrun Timer",
+	"version": "0.1.0",
+	"author": "Ralidon",
+	"description": "A in-game Speedrun Timer",
+	"dll": "SpeedrunTimer.dll",
+	"dependencies": [
+		{
+			"name": "FortRise",
+			"version": "5.0.0"
+		}
+	],
+	"update": {
+		"gamebanana": {
+			"id": 628505
+		}
+	}
+}

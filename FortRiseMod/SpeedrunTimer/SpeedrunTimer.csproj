@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Configuration.props"/>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ModName>Ralidon.SpeedrunTimer</ModName>
+    <ModVersion>0.1.0</ModVersion>
+
+    <ModLoaderPath>D:\SteamLibrary\steamapps\common\TowerFall\FortRise</ModLoaderPath>
+    <ModZipPath>..\release\$(ModName)-$(ModVersion).zip</ModZipPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FortRise.Configuration" Version="1.5.6" />
+  </ItemGroup>
+</Project>
